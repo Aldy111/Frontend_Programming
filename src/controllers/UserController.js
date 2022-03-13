@@ -21,17 +21,16 @@ import users from "../data/users";
  */
 const formatUser = (title) => {
     return new Promise((resolve,reject)=>{
+     const hasilFormat = users.map((format) =>{
+      return {
+         name: title + '.'+format.name,
+         age: format.age,
+         major: format.major
+       }
+     })
         setTimeout(()=>{
-            resolve(
-                users.map(isiData => {
-                    const data = {};
-                    data["name"] = `${title},${isiData.name}`;
-                    data.age = isiData.age;
-                    data.major = isiData.major;
-
-                    return data;
-                })
-            )
+            resolve(hasilFormat);
+            
         },3000);
     })
 };
@@ -46,12 +45,11 @@ const formatUser = (title) => {
  */
 const findByName = (name) => {
     return new Promise((resolve,reject)=> {
+     const hasilFind = users.find((name) =>{
+         return name;
+         })
         setTimeout(() => {
-            resolve(
-                users.find((name)=>{
-                    return name;
-                })
-            )
+            resolve(hasilFind)
         }, 2000);
     })
 };
@@ -72,12 +70,11 @@ const findByName = (name) => {
  */
 const filterByMajor = (major) => {
     return new Promise((resolve,reject)=>{
+      const hasilFilter = users.filter((fil)=>{
+         return fil.major == major;
+         })
         setTimeout(() => {
-            resolve(
-                users.filter((isiData)=>{
-                    return isiData.major == major;
-                })
-            )
+            resolve(hasilFilter)
         }, 4000);
     })
 };
