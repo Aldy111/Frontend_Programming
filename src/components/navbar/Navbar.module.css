@@ -1,0 +1,34 @@
+/* small screnn */
+.container {
+    background-color: #4CC9F0;
+    padding: 1rem;
+    color: #fff;
+}
+.navbar__title {
+    margin-bottom: 1rem;
+}
+.navbar__list {
+    list-style: none;
+}
+.navbar__item {
+    margin-bottom: 1rem;
+}
+
+/* medium Screnn */
+
+@media (min-width :768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar__list {
+        display: flex;
+    }
+    .navbar__item {
+        margin: 1rem;
+    }
+    .navbar__title {
+        margin: 0;
+    }
+}
