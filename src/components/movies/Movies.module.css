@@ -18,28 +18,6 @@
     display: flex;
     flex-direction: column;
   }
-  
-  .movie {
-    margin-bottom: 1rem;
-  }
-  
-  .movie__image {
-    border-radius: 25px;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-  
-  .movie__title {
-    color: #4361ee;
-    font-size: 1.95rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .movie__date {
-    color: #64748b;
-  }
-  
   /* Medium Screen */
   @media (min-width: 768px) {
     .movie__container {
@@ -48,10 +26,6 @@
       justify-content: center;
       align-items: center;
     }
-  
-    .movie {
-      flex-basis: 50%;
-    }
   }
   
   /* Large Screen */
@@ -59,10 +33,5 @@
     .container {
       max-width: 1200px;
       margin: 3rem auto;
-    }
-  
-    .movie {
-      flex-basis: 25%;
-      padding: 1rem;
     }
   }
