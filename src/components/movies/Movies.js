@@ -1,16 +1,10 @@
 import Movie from "../movie/Movie";
 import styles from "./Movies.module.css";
-import data from "../../utils/constants/data";
-import { useState } from "react";
+
 import { nanoid } from "nanoid";
-const Movies = () => {
+const Movies = (props) => {
 
-    //membuat variabel movie biasa menjadi variabel state
-    //usestate mengembalikan 2 buah data :
-    //-nilai saat ini
-    //-fungsi untuk mengubah state
-    const [movies,setMovies] = useState(data);
-
+    const {movies,setMovies} = props;
     //fungsi tambahFilm berjalan ketika di klik
     const tambahFilm = () => {
         const movie = {

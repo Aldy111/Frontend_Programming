@@ -7,7 +7,10 @@ const Movie = (props) => {
         <div className = {styles.movie}>
                 <img className = {styles.movie__image} src={movie.poster}/>
                 <h3 className = {styles.movie__title}>{movie.title}</h3>
-                <p className = {styles.movie__date}>{movie.year}</p>
+                    <div className = {styles.movie__bottom} >
+                        <span className = {styles.movie__genre} >{movie.type}</span>
+                        <p className = {styles.movie__date} >{movie.year}</p>
+                    </div>
         </div>
     )
 }
