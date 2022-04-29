@@ -54,6 +54,11 @@
 
 
 }
+alert{
+    color: red;
+    margin-right: 5rem;
+    font-size: small;
+}
 .addmovieform__button {
     padding: 0.8rem 2rem;
     border: none;
