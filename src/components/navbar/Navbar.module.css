@@ -13,6 +13,10 @@
 .navbar__item {
     margin-bottom: 1rem;
 }
+.navbar__Link {
+    color: #fff;
+    text-decoration: none;
+}
 
 /* medium Screnn */
 
