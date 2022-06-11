@@ -1,12 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Hero from "../hero/Hero";
-import Movies from "../movies/Movies";
+import Hero from "../../components/hero/Hero";
+import Movies from "../../components/movies/Movies";
+import ENDPOINTS from "../../utils/endpoints";
 
 const Popular = ()=> {
-    const API_KEY = process.env.REACT_APP_API_KEY;
-    const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
-
     const [movies , setMovies]  = useState([]);
 
     useEffect(()=> {
@@ -14,16 +12,14 @@ const Popular = ()=> {
     },[]);
 
     const getPopularMovies = async () => {
-        const response =  await axios(URL);
+        const response =  await axios(ENDPOINTS.POPULAR);
         setMovies(response.data.results);
     }
-
-    console.log(movies)
 
     return(
         <div>
             <Hero/>
-            <Movies movies = {movies}/>
+            <Movies title = "Popular" movies = {movies}/>
         </div>
     )
 }

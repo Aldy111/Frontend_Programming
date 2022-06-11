@@ -1,10 +1,9 @@
 /* Small Screen */
 .container {
-    margin: 1rem;
+    margin: 5rem auto;
   }
   
   .movies {
-    margin: 5rem 0;
     text-align: center;
   }
   
@@ -24,7 +23,6 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
     }
   }
   
@@ -32,6 +30,5 @@
   @media (min-width: 992px) {
     .container {
       max-width: 1200px;
-      margin: 3rem auto;
     }
   }

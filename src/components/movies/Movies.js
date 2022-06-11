@@ -1,10 +1,10 @@
-import Movie from "../movie/Movie";
+import Movie from "../../pages/movie/Movie";
 import styles from "./Movies.module.css";
 
 import { nanoid } from "nanoid";
 const Movies = (props) => {
 
-    const {movies,setMovies} = props;
+    const {title, movies,setMovies} = props;
     //fungsi tambahFilm berjalan ketika di klik
     const tambahFilm = () => {
         const movie = {
@@ -23,9 +23,10 @@ const Movies = (props) => {
     
     }
     return(
+        <div>
         <div className = {styles.container}>
             <section className = {styles.movies}>
-                <h2 className = {styles.movies__title}>Latest Movies</h2>
+                <h2 className = {styles.movies__title}>{title}</h2>
                 <div className = {styles.movie__container}>
                 {/* 
                 * Looping movies
@@ -40,6 +41,7 @@ const Movies = (props) => {
                 </div>
                 <button onClick = {tambahFilm}>add movie</button>
             </section>
+        </div>
         </div>
     )
 }
