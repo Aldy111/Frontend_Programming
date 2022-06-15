@@ -2,26 +2,13 @@ import Movie from "../../pages/movie/Movie";
 import styles from "./Movies.module.css";
 
 import { nanoid } from "nanoid";
+import { useSelector } from "react-redux";
 const Movies = (props) => {
 
-    const {title, movies,setMovies} = props;
-    //fungsi tambahFilm berjalan ketika di klik
-    const tambahFilm = () => {
-        const movie = {
-            id:nanoid(),
-            title: "one piece stempade",
-            year : "2021",
-            type : "Movie",
-            poster : "https://picsum.photos/300/400",
-        }
-        //LOGIC
-        //panggil setMovies untuk mengubah data movies
-        //ambil 12 data movies + movies
-        //spread operator = copy and marge
+    const {title} = props;
 
-        setMovies([...movies, movie]);
-    
-    }
+    const movies = useSelector((store)=> store.movies.movies );
+
     return(
         <div>
         <div className = {styles.container}>
@@ -39,7 +26,7 @@ const Movies = (props) => {
                     })
                 }
                 </div>
-                <button onClick = {tambahFilm}>add movie</button>
+                
             </section>
         </div>
         </div>

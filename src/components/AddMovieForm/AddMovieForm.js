@@ -1,10 +1,14 @@
 import styles from "./AddMovieForm.module.css";
 import { nanoid } from "nanoid";
 import { useState } from "react";
-const AddMovieForm = (props) => {
-    
-  // melakukan props dari home.js
-    const { movies, setMovies } = props;
+import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { addMovie } from "../../features/moviesSlice";
+const AddMovieForm = () => {
+    //buat dispatch
+    const dispatch = useDispatch();
+    //buat navigation
+    const Navigation = useNavigate();
 
   //membuat state menggunakan object untuk validasi
     const [validateData, setValidateData] = useState({
@@ -47,7 +51,8 @@ const AddMovieForm = (props) => {
       [name]:value
     })
   }  
-  const addmovie = ()=> {
+
+  const submitmovie = ()=> {
     const movie = {
         id: nanoid(),
         title: title,
@@ -56,8 +61,8 @@ const AddMovieForm = (props) => {
         poster: poster,
     };
 
-    // melakukan push data ke setmovies
-    setMovies([...movies, movie]);
+    dispatch(addMovie(movie))
+    Navigation("/");
   }
 
 
@@ -66,7 +71,7 @@ const AddMovieForm = (props) => {
     //melakukan default agar form tidak tersubmit
     e.preventDefault();
     
-    validate() && addmovie()
+    validate() && submitmovie()
     
     };
     return(

@@ -8,7 +8,10 @@ import TopRated from "./pages/movie/top";
 import Home from "./pages/Home";
 import Detail from "./pages/movie/detail";
 
+
 const App = () => {
+
+
   return (
     <div>
         <Layout>
