@@ -10,7 +10,7 @@ const Button = styled.button `
     background-color : #4361ee;
     cursor :pointer;
     text-decoration : none;
-    margin-top : 2rem;
+    margin-top : 3rem;
 `;
 
 

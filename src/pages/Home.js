@@ -1,6 +1,5 @@
 import Hero from "../components/hero/Hero";
 import Movies from "../components/movies/Movies";
-import Counter from "../components/counter";
 
 const Home = () => {
     return (

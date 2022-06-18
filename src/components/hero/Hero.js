@@ -42,7 +42,7 @@ const Hero = () => {
                     {<Button as ="a" href={`https://www.youtube.com/watch?v=${idTrailer}`} target="_blank" >watch movie</Button>}
                 </div>
                 <div className = {styles.hero__right}>
-                    <img className = {styles.hero__image} src={`https://image.tmdb.org/t/p/w300/${movie.backdrop_path}`} alt={movie.Title} />
+                    <img className = {styles.hero__image} src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt={movie.Title} />
                 </div>
             </section>
         </div>

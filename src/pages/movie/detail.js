@@ -1,13 +1,15 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router";
 import DetailMovie from "../../components/DetailMovie"
 import Movies from "../../components/movies/Movies";
+import { updateMovies } from "../../features/moviesSlice";
 import ENDPOINTS from "../../utils/endpoints";
 
 const Detail = ()=>{
-    //simpan API_KEY, movies(state), dan id(params) ke variabel
-    const [movies,setMovies] = useState([]);
+    //membuat dispatch untuk mentrigger
+    const dispatch = useDispatch();
     const{id} = useParams();
 
     useEffect(()=> {
@@ -16,13 +18,12 @@ const Detail = ()=>{
 
     const getRecommendationMovies = async()=> {
         const response = await axios(ENDPOINTS.RECOMMENDATIONS(id));
-
-        setMovies(response.data.results);
+        dispatch(updateMovies(response.data.results))
     }
     return (
         <>
             <DetailMovie/>
-            <Movies title = "Recomendations" movies = {movies}/>
+            <Movies title = "Recomendations"/>
         </>
     );
 }
